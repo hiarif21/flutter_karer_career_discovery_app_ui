@@ -11,6 +11,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: CustomScrollView(
         physics: const ClampingScrollPhysics(),
@@ -49,7 +51,8 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-              color: ColorsApp.background500,
+              color:
+                  darkMode ? ColorsApp.background900 : ColorsApp.background500,
               child: const Text(
                 "Discover your\ndream job",
                 style: TextStyle(
@@ -65,15 +68,19 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               height: 183,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    ColorsApp.background500,
-                    ColorsApp.background500,
-                    ColorsApp.white,
-                    ColorsApp.white,
+                    darkMode
+                        ? ColorsApp.background900
+                        : ColorsApp.background500,
+                    darkMode
+                        ? ColorsApp.background900
+                        : ColorsApp.background500,
+                    darkMode ? ColorsApp.background500 : ColorsApp.white,
+                    darkMode ? ColorsApp.background500 : ColorsApp.white,
                   ],
                   stops: [
                     0.0,
@@ -233,11 +240,11 @@ class HomeScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        decoration: const BoxDecoration(
-          color: ColorsApp.white,
+        decoration: BoxDecoration(
+          color: darkMode ? ColorsApp.background500 : ColorsApp.white,
           border: Border(
             top: BorderSide(
-              color: ColorsApp.gray100,
+              color: darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
             ),
           ),
         ),

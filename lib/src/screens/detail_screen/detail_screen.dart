@@ -8,6 +8,8 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: CustomScrollView(
         physics: const ClampingScrollPhysics(),
@@ -15,6 +17,7 @@ class DetailScreen extends StatelessWidget {
           // app bar section
           SliverAppBar(
             automaticallyImplyLeading: false,
+            pinned: true,
             title: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
@@ -48,16 +51,19 @@ class DetailScreen extends StatelessWidget {
               width: double.infinity,
               height: 132,
               padding: const EdgeInsets.only(top: 32),
-              color: ColorsApp.background500,
+              color:
+                  darkMode ? ColorsApp.background900 : ColorsApp.background500,
               child: Stack(
                 children: [
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
                       height: (132 - 32) / 2,
-                      decoration: const BoxDecoration(
-                        color: ColorsApp.white,
-                        borderRadius: BorderRadius.vertical(
+                      decoration: BoxDecoration(
+                        color: darkMode
+                            ? ColorsApp.background500
+                            : ColorsApp.white,
+                        borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(32),
                         ),
                       ),
@@ -139,7 +145,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Container(
                       width: 2,
-                      color: ColorsApp.gray100,
+                      color: darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
                     ),
                     Expanded(
                       child: Column(
@@ -163,7 +169,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Container(
                       width: 2,
-                      color: ColorsApp.gray100,
+                      color: darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
                     ),
                     Expanded(
                       child: Column(
@@ -251,11 +257,11 @@ class DetailScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(20),
-        decoration: const BoxDecoration(
-          color: ColorsApp.white,
+        decoration: BoxDecoration(
+          color: darkMode ? ColorsApp.background500 : ColorsApp.white,
           border: Border(
             top: BorderSide(
-              color: ColorsApp.gray100,
+              color: darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
             ),
           ),
         ),
@@ -266,7 +272,8 @@ class DetailScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: ColorsApp.gray100,
+                    backgroundColor:
+                        darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
                     foregroundColor: ColorsApp.primary700,
                     padding: const EdgeInsets.all(12),
                     elevation: 0,

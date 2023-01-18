@@ -26,6 +26,8 @@ class PinnedJobCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     Color cardColor;
     Color cardBorderColor;
     Color imageBorderColor;
@@ -43,12 +45,12 @@ class PinnedJobCardWidget extends StatelessWidget {
       jobTypeBackgroundColor = ColorsApp.primary600;
       jobTypeForegroundColor = ColorsApp.white;
     } else {
-      cardColor = ColorsApp.white;
+      cardColor = darkMode ? ColorsApp.background500 : ColorsApp.white;
       imageBorderColor = ColorsApp.gray100;
-      cardBorderColor = ColorsApp.gray300;
-      primaryTextColor = ColorsApp.black;
+      cardBorderColor = darkMode ? ColorsApp.gray700 : ColorsApp.gray300;
+      primaryTextColor = darkMode ? ColorsApp.white : ColorsApp.black;
       secondaryTextColor = ColorsApp.gray500;
-      jobTypeBackgroundColor = ColorsApp.gray100;
+      jobTypeBackgroundColor = darkMode ? ColorsApp.gray800 : ColorsApp.gray100;
       jobTypeForegroundColor = ColorsApp.gray500;
     }
 

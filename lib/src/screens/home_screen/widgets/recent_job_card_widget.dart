@@ -24,6 +24,8 @@ class RecentJobCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
@@ -36,10 +38,13 @@ class RecentJobCardWidget extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(20, 0, 20, 12),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: ColorsApp.white,
+          color: darkMode ? ColorsApp.background500 : ColorsApp.white,
+          borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: ColorsApp.black.withOpacity(0.05),
+              color: darkMode
+                  ? ColorsApp.white.withOpacity(0.05)
+                  : ColorsApp.black.withOpacity(0.05),
               blurRadius: 20,
             ),
           ],
@@ -70,7 +75,7 @@ class RecentJobCardWidget extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
                     decoration: BoxDecoration(
-                      color: ColorsApp.gray100,
+                      color: darkMode ? ColorsApp.gray800 : ColorsApp.gray100,
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
@@ -85,10 +90,10 @@ class RecentJobCardWidget extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     jobName,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: ColorsApp.black,
+                      color: darkMode ? ColorsApp.white : ColorsApp.black,
                     ),
                   ),
                   const SizedBox(height: 8),

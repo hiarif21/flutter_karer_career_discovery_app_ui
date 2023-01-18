@@ -17,6 +17,8 @@ class BottomNavigationItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -30,7 +32,11 @@ class BottomNavigationItemWidget extends StatelessWidget {
       child: HeroIcon(
         active && iconActive != null ? iconActive! : icon,
         size: 24,
-        color: active ? ColorsApp.primary700 : ColorsApp.gray300,
+        color: active
+            ? ColorsApp.primary700
+            : darkMode
+                ? ColorsApp.gray700
+                : ColorsApp.gray300,
         style: active ? HeroIconStyle.mini : HeroIconStyle.outline,
       ),
     );

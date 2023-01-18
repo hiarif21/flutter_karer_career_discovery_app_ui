@@ -17,6 +17,8 @@ class CategoryButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool darkMode = Theme.of(context).brightness == Brightness.dark;
+
     Color backgroundColor;
     Color foregroundColor;
 
@@ -24,7 +26,7 @@ class CategoryButtonWidget extends StatelessWidget {
       backgroundColor = ColorsApp.primary700;
       foregroundColor = ColorsApp.white;
     } else {
-      backgroundColor = ColorsApp.gray200;
+      backgroundColor = darkMode ? ColorsApp.gray800 : ColorsApp.gray100;
       foregroundColor = ColorsApp.gray500;
     }
 

@@ -15,4 +15,5 @@ class ColorsApp {
   static const gray300 = Color(0xffD1D5DB);
   static const gray500 = Color(0xff6B7280);
   static const gray700 = Color(0xff374151);
+  static const gray800 = Color(0xff1f2937);
 }
