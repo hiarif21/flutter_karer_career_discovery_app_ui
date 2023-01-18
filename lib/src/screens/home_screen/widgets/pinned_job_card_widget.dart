@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:karer/src/screens/detail_screen/detail_screen.dart';
 import 'package:karer/src/styles/colors_app.dart';
 
 class PinnedJobCardWidget extends StatelessWidget {
@@ -51,101 +52,110 @@ class PinnedJobCardWidget extends StatelessWidget {
       jobTypeForegroundColor = ColorsApp.gray500;
     }
 
-    return Container(
-      width: 300,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: cardBorderColor,
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const DetailScreen(),
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: imageBorderColor,
-                    strokeAlign: StrokeAlign.outside,
-                  ),
-                ),
-                clipBehavior: Clip.hardEdge,
-                child: Image.asset(
-                  companyLogo,
-                  height: 50,
-                  width: 50,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    companyName,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: primaryTextColor,
+      child: Container(
+        width: 300,
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: cardBorderColor,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: imageBorderColor,
+                      strokeAlign: StrokeAlign.outside,
                     ),
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    companyLocation,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: secondaryTextColor,
-                    ),
+                  clipBehavior: Clip.hardEdge,
+                  child: Image.asset(
+                    companyLogo,
+                    height: 50,
+                    width: 50,
+                    fit: BoxFit.cover,
                   ),
-                ],
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      companyName,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: primaryTextColor,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      companyLocation,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: secondaryTextColor,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                HeroIcon(
+                  HeroIcons.heart,
+                  size: 24,
+                  color: secondaryTextColor,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Text(
+              jobName,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: primaryTextColor,
               ),
-              const Spacer(),
-              HeroIcon(
-                HeroIcons.heart,
-                size: 24,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              salaryRange,
+              style: TextStyle(
+                fontSize: 14,
                 color: secondaryTextColor,
               ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Text(
-            jobName,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: primaryTextColor,
             ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            salaryRange,
-            style: TextStyle(
-              fontSize: 14,
-              color: secondaryTextColor,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: jobTypeBackgroundColor,
-            ),
-            child: Text(
-              jobType,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: jobTypeForegroundColor,
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: jobTypeBackgroundColor,
+              ),
+              child: Text(
+                jobType,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: jobTypeForegroundColor,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
