@@ -1,16 +1,22 @@
-# karer
+# 👷 Karer - Career Discovery App
 
-A new Flutter project.
+Karer is a career discovery app created by [@hiarif21](https://www.instagram.com/hiarif21/) 👋
 
-## Getting Started
+I got inspiration from https://www.instagram.com/p/CaTb4-MvKwO/ then redesigned it and converted it into flutter code.
 
-This project is a starting point for a Flutter application.
+🔥 Instagram: [@hiarif21](https://www.instagram.com/hiarif21/)
 
-A few resources to get you started if this is your first Flutter project:
+🔥 Github: https://github.com/hiarif21
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Previews
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p float="left" align="middle">
+<img width="200" alt="screenshot" src="_previews/home_light.jpg">
+<img width="200" alt="screenshot" src="_previews/detail_light.jpg">
+<img width="200" alt="screenshot" src="_previews/home_dark.jpg">
+<img width="200" alt="screenshot" src="_previews/detail_dark.jpg">
+</p>
+
+## Attributions
+
+- Icons: https://heroicons.com/
