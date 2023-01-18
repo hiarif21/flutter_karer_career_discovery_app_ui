@@ -251,7 +251,7 @@ class DetailScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: ColorsApp.white,
           border: Border(
             top: BorderSide(
@@ -292,7 +292,7 @@ class DetailScreen extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                       elevation: 0,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      fixedSize: Size.fromHeight(48),
+                      fixedSize: const Size.fromHeight(48),
                       textStyle: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

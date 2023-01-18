@@ -1,9 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:karer/src/screens/home_screen/widgets/bottom_navigation_item_widget.dart';
 import 'package:karer/src/screens/home_screen/widgets/category_button_widget.dart';
@@ -238,7 +233,7 @@ class HomeScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: ColorsApp.white,
           border: Border(
             top: BorderSide(
