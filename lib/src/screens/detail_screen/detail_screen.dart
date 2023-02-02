@@ -76,7 +76,7 @@ class DetailScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: ColorsApp.gray100,
-                          strokeAlign: StrokeAlign.outside,
+                          strokeAlign: BorderSide.strokeAlignOutside,
                         ),
                       ),
                       clipBehavior: Clip.hardEdge,

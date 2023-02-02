@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                     darkMode ? ColorsApp.background500 : ColorsApp.white,
                     darkMode ? ColorsApp.background500 : ColorsApp.white,
                   ],
-                  stops: [
+                  stops: const [
                     0.0,
                     0.5,
                     0.5,

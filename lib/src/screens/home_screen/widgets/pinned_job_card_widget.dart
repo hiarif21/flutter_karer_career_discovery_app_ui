@@ -82,7 +82,7 @@ class PinnedJobCardWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: imageBorderColor,
-                      strokeAlign: StrokeAlign.outside,
+                      strokeAlign: BorderSide.strokeAlignOutside,
                     ),
                   ),
                   clipBehavior: Clip.hardEdge,
